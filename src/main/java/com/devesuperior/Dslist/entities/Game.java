@@ -16,27 +16,33 @@ public class Game {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String titke;
+	private String title;
 	
 	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
-	private String plaform;
+	private String platforms;
+	private Double score; 
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	public Game() {
 	}
 
-	public Game(Long id, String titke, Integer year, String genre, String plaform, String imgUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score,String imgUrl,
 			String shortDescription, String longDescription) {
 		
 		this.id = id;
-		this.titke = titke;
+		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plaform = plaform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
@@ -50,12 +56,12 @@ public class Game {
 		this.id = id;
 	}
 
-	public String getTitke() {
-		return titke;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitke(String titke) {
-		this.titke = titke;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public Integer getYear() {
@@ -74,17 +80,29 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlaform() {
-		return plaform;
+	public String getPlaforms() {
+		return platforms;
 	}
 
-	public void setPlaform(String plaform) {
-		this.plaform = plaform;
+	public void setPlaforms(String plaforms) {
+		this.platforms = plaforms;
+	}
+	
+	
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
 		return imgUrl;
 	}
+	
+	
 
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
